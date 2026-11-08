@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python: o tipo int · English com o Ronan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body><header class="top"><a class="brand" href="index.html">English <span>A1→C2</span></a><nav><a href="index.html">Início</a><a href="guia-ingles-1.html">Guia Inglês 1</a><a href="conversacao.html">Treinar a fala</a><a href="prompt-chatgpt.html">Prompt ChatGPT</a><a href="python-intro.html" aria-current="page">Python</a></nav></header>
+<main><h1>Python: o tipo int</h1><p class="lead">Texto da referência do Real Python, reescrito em inglês simples.</p><section><h2>What is an <code>int</code> in Python?</h2>
+<p>An <b>int</b> is a type of data in Python. "Int" means "integer".</p>
+<p>An integer is a <b>whole number</b>. It doesn't have a decimal point. Examples: <code>42</code>, <code>-5</code> and <code>0</code>.</p>
+<p>An integer can be <b>positive</b>, <b>negative</b> or <b>zero</b>.</p></section>
+<section><h2>Why do we use integers?</h2><ul><li>We use them to <b>count</b> things. (3 books, 10 students)</li><li>We use them to find the <b>position</b> of an item in a list.</li><li>We use them to do <b>math</b>: plus, minus, times.</li></ul></section>
+<section><h2>Code example</h2><pre>number = 42
+type(number)    # &lt;class 'int'&gt;</pre><p>The type of <code>42</code> is <code>int</code>.</p></section>
+<section><h2>Same number, different bases</h2><p>In Python, we can write the same number in four ways:</p>
+<pre>decimal     = 42
+binary      = 0b101010
+octal       = 0o52
+hexadecimal = 0x2A</pre><p>All of them are <b>42</b>. Only the way we write the number is different. The number is the same.</p></section>
+<section><h2>Make an int from a string</h2><pre>int("101010", 2)    # 42</pre><p>The <code>2</code> means "base 2" (binary). The string <code>"101010"</code> becomes the number 42.</p></section>
+<section><h2>Some methods of <code>int</code></h2><ul><li><code>.bit_length()</code> → how many bits the number needs.</li><li><code>.bit_count()</code> → how many ones the number has in binary.</li><li><code>.to_bytes()</code> → changes the number to bytes.</li><li><code>.from_bytes()</code> → changes bytes to a number.</li></ul></section>
+<section><h2>Real example</h2><p>We have three binary strings. We want decimal numbers.</p>
+<pre>binary_strings = ["1101", "1010", "1111"]
+decimal_numbers = [int(b, 2) for b in binary_strings]
+# [13, 10, 15]</pre><p><code>1101</code> is 13. <code>1010</code> is 10. <code>1111</code> is 15.</p></section>
+<section><h2>Mini glossário</h2><div class="scroll"><table><thead><tr><th>Inglês</th><th>Português</th></tr></thead><tbody><tr><td>whole number</td><td>número inteiro (sem fração)</td></tr><tr><td>decimal point</td><td>vírgula/ponto decimal</td></tr><tr><td>positive / negative</td><td>positivo / negativo</td></tr><tr><td>count</td><td>contar</td></tr><tr><td>same</td><td>mesmo / igual</td></tr><tr><td>way</td><td>jeito / maneira</td></tr><tr><td>string</td><td>texto (sequência de caracteres)</td></tr><tr><td>base</td><td>base (numérica)</td></tr><tr><td>bit</td><td>bit</td></tr><tr><td>change… to…</td><td>transformar… em…</td></tr></tbody></table></div></section><p><a href="python-intro.html">← Todos os tópicos de Python</a></p><p class="src">Fonte original: <a href="https://realpython.com/ref/builtin-types/int/">Real Python — int</a>. Texto adaptado para nível A1.</p></main>
+<footer>Feito para estudar Inglês 1 (UFJ). Treine em voz alta: ouça, repita, grave.</footer>
+<script src="app.js"></script></body></html>

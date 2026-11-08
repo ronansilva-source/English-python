@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data types: tipos de dados · English com o Ronan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body><header class="top"><a class="brand" href="index.html">English <span>A1→C2</span></a><nav><a href="index.html">Início</a><a href="guia-ingles-1.html">Guia Inglês 1</a><a href="conversacao.html">Treinar a fala</a><a href="prompt-chatgpt.html">Prompt ChatGPT</a><a href="python-intro.html" aria-current="page">Python</a></nav></header>
+<main><h1>Data types: tipos de dados</h1><p class="lead">Integers, floats, strings, booleans e None, em inglês simples.</p><section><h2>Integers</h2>
+<p>An <b>integer</b> is a whole number. It has no decimal point. It can be positive, negative or zero.</p><pre><code>number = 42
+negative = -5
+zero = 0
+type(number)</code></pre><pre class="out" aria-label="Output"><code>&lt;class &#x27;int&#x27;&gt;</code></pre><p>Read the full text in <a href="python-int.html">Python: o tipo int</a>.</p></section><section><h2>Floats</h2><p>A <b>float</b> is a number with a decimal point.</p><pre><code>1.5
+float(&quot;3.14&quot;)
+float(42)
+1e-3</code></pre><pre class="out" aria-label="Output"><code>1.5
+3.14
+42.0
+0.001</code></pre><ul><li><code>float("3.14")</code> changes a string to a float.</li><li><code>float(42)</code> changes an int to a float: <code>42.0</code>.</li><li><code>1e-3</code> is scientific notation. It means 0.001.</li><li>Int + float = float. Example: <code>1.0 + 2</code> is <code>3.0</code>.</li><li>Division with <code>/</code> always gives a float: <code>10 / 2</code> is <code>5.0</code>.</li></ul></section><section><h2>Strings</h2><p>A <b>string</b> is text. We write it between quotes. Strings can’t be changed after we create them (they are <i>immutable</i>).</p><pre><code>greeting = &quot;Hello, World!&quot;
+single = &#x27;Hello&#x27;
+double = &quot;Hello&quot;
+multi = &quot;&quot;&quot;Line one
+Line two&quot;&quot;&quot;
+f&quot;The number is {42}&quot;</code></pre><pre class="out" aria-label="Output"><code>&#x27;The number is 42&#x27;</code></pre><p>The <code>f</code> before the quotes makes an <b>f-string</b>. Python puts the value inside <code>{}</code>.</p></section><section><h2>Booleans</h2><p>A <b>boolean</b> has only two values: <code>True</code> or <code>False</code>. Comparisons give booleans.</p><pre><code>5 &gt; 3
+5 == 3
+bool(0)
+bool(1)
+bool(&quot;&quot;)
+bool(&quot;hi&quot;)</code></pre><pre class="out" aria-label="Output"><code>True
+False
+False
+True
+False
+True</code></pre><p>Some values count as false: <code>0</code>, <code>""</code> (empty text), <code>[]</code> (empty list) and <code>None</code>. Most other values count as true.</p></section><section><h2>Null: None</h2><p><code>None</code> means “nothing” or “no value”. It is the Python way to say null.</p><pre><code>result = None
+result is None
+type(None)</code></pre><pre class="out" aria-label="Output"><code>True
+&lt;class &#x27;NoneType&#x27;&gt;</code></pre><p>Use <code>is None</code> to check it (not <code>== None</code>).</p></section><section><h2>Mini glossário</h2><div class="scroll"><table><thead><tr><th>Inglês</th><th>Português</th></tr></thead><tbody><tr><td>integer / int</td><td>número inteiro</td></tr><tr><td>float</td><td>número com casas decimais</td></tr><tr><td>string / str</td><td>texto</td></tr><tr><td>boolean / bool</td><td>verdadeiro ou falso</td></tr><tr><td>quotes</td><td>aspas</td></tr><tr><td>decimal point</td><td>ponto decimal</td></tr><tr><td>immutable</td><td>imutável (não muda)</td></tr><tr><td>True / False</td><td>verdadeiro / falso</td></tr><tr><td>None</td><td>nada, sem valor (nulo)</td></tr><tr><td>value</td><td>valor</td></tr></tbody></table></div></section><p class="src">Fontes (Real Python): <a href="https://realpython.com/ref/builtin-types/int/">int</a> · <a href="https://realpython.com/ref/builtin-types/float/">float</a> · <a href="https://realpython.com/ref/builtin-types/str/">str</a> · <a href="https://realpython.com/ref/builtin-functions/bool/">bool()</a> · <a href="https://realpython.com/ref/keywords/none/">None</a>. Texto adaptado para nível A1.</p></main>
+<footer>Feito para estudar Inglês 1 (UFJ). Treine em voz alta: ouça, repita, grave.</footer>
+<script src="app.js"></script></body></html>

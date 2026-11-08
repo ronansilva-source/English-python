@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data structures: estruturas de dados · English com o Ronan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body><header class="top"><a class="brand" href="index.html">English <span>A1→C2</span></a><nav><a href="index.html">Início</a><a href="guia-ingles-1.html">Guia Inglês 1</a><a href="conversacao.html">Treinar a fala</a><a href="prompt-chatgpt.html">Prompt ChatGPT</a><a href="python-intro.html" aria-current="page">Python</a></nav></header>
+<main><h1>Data structures: estruturas de dados</h1><p class="lead">Lists, tuples, dictionaries e sets: como cada uma guarda dados.</p><section><h2>Lists</h2><p>A <b>list</b> keeps items in order. You can change it: add, remove or replace items.</p><pre><code>colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;]
+colors[0]</code></pre><pre class="out" aria-label="Output"><code>&#x27;red&#x27;</code></pre><pre><code>fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+fruits[0] = &quot;mango&quot;
+fruits</code></pre><pre class="out" aria-label="Output"><code>[&#x27;mango&#x27;, &#x27;banana&#x27;, &#x27;cherry&#x27;]</code></pre><pre><code>tasks = []
+tasks.append(&quot;Write report&quot;)
+tasks.append(&quot;Call John&quot;)
+tasks.insert(0, &quot;Pay bills&quot;)
+tasks</code></pre><pre class="out" aria-label="Output"><code>[&#x27;Pay bills&#x27;, &#x27;Write report&#x27;, &#x27;Call John&#x27;]</code></pre><div class="scroll"><table><thead><tr><th>Method</th><th>Meaning</th></tr></thead><tbody><tr><td><code>.append()</code></td><td>adds an item at the end</td></tr><tr><td><code>.insert()</code></td><td>adds an item at a position</td></tr><tr><td><code>.remove()</code></td><td>removes the first item with that value</td></tr><tr><td><code>.pop()</code></td><td>removes and returns an item</td></tr><tr><td><code>.sort()</code></td><td>sorts the list</td></tr><tr><td><code>.reverse()</code></td><td>reverses the list</td></tr></tbody></table></div><p>The first item has index <code>0</code>.</p></section><section><h2>Tuples</h2><p>A <b>tuple</b> is like a list, but you can’t change it (it is immutable). Use it for fixed data.</p><pre><code>coordinates = (10.5, 20.3)
+person = (&quot;Alice&quot;, 30, &quot;Engineer&quot;)
+person[2]
+single = (5,)</code></pre><pre class="out" aria-label="Output"><code>&#x27;Engineer&#x27;</code></pre><p>The <b>comma</b> makes the tuple. A tuple with one item needs a comma: <code>(5,)</code>. Tuple methods: <code>.count()</code> and <code>.index()</code>.</p></section><section><h2>Dictionaries</h2><p>A <b>dictionary</b> keeps pairs: a <b>key</b> and a <b>value</b>. Keys are unique. You use the key to find the value.</p><pre><code>person = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30, &quot;city&quot;: &quot;New York&quot;}
+person[&quot;name&quot;]
+person[&quot;age&quot;] = 31
+del person[&quot;city&quot;]
+person</code></pre><pre class="out" aria-label="Output"><code>&#x27;Alice&#x27;
+{&#x27;name&#x27;: &#x27;Alice&#x27;, &#x27;age&#x27;: 31}</code></pre><div class="scroll"><table><thead><tr><th>Method</th><th>Meaning</th></tr></thead><tbody><tr><td><code>.get()</code></td><td>gives the value of a key (or a default)</td></tr><tr><td><code>.keys()</code></td><td>all the keys</td></tr><tr><td><code>.values()</code></td><td>all the values</td></tr><tr><td><code>.items()</code></td><td>all the key-value pairs</td></tr><tr><td><code>.update()</code></td><td>adds or changes pairs</td></tr><tr><td><code>.pop()</code></td><td>removes a key and gives its value</td></tr></tbody></table></div></section><section><h2>Sets</h2><p>A <b>set</b> keeps unique items. It has no order. It removes duplicates.</p><pre><code>fruits = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+&quot;banana&quot; in fruits
+visitors = [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Alice&quot;, &quot;Charlie&quot;, &quot;Bob&quot;]
+set(visitors)
+empty_set = set()</code></pre><pre class="out" aria-label="Output"><code>True
+{&#x27;Charlie&#x27;, &#x27;Bob&#x27;, &#x27;Alice&#x27;}</code></pre><p>The order of a set can change. Use <code>set()</code> for an empty set. <code>{}</code> makes an empty dictionary.</p></section><section><h2>Which one do I use?</h2><div class="scroll"><table><thead><tr><th></th><th>Order</th><th>Can change?</th><th>Duplicates?</th></tr></thead><tbody><tr><td>list</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>tuple</td><td>yes</td><td>no</td><td>yes</td></tr><tr><td>dict</td><td>yes (order of insertion)</td><td>yes</td><td>keys: no</td></tr><tr><td>set</td><td>no</td><td>yes</td><td>no</td></tr></tbody></table></div></section><section><h2>Mini glossário</h2><div class="scroll"><table><thead><tr><th>Inglês</th><th>Português</th></tr></thead><tbody><tr><td>list</td><td>lista</td></tr><tr><td>tuple</td><td>tupla</td></tr><tr><td>dictionary / dict</td><td>dicionário</td></tr><tr><td>set</td><td>conjunto</td></tr><tr><td>key</td><td>chave</td></tr><tr><td>value</td><td>valor</td></tr><tr><td>item</td><td>item, elemento</td></tr><tr><td>index</td><td>posição (índice)</td></tr><tr><td>duplicate</td><td>repetido</td></tr><tr><td>add / remove</td><td>adicionar / remover</td></tr><tr><td>unique</td><td>único</td></tr><tr><td>order</td><td>ordem</td></tr></tbody></table></div></section><p class="src">Fontes (Real Python): <a href="https://realpython.com/ref/builtin-types/list/">list</a> · <a href="https://realpython.com/ref/builtin-types/tuple/">tuple</a> · <a href="https://realpython.com/ref/builtin-types/dict/">dict</a> · <a href="https://realpython.com/ref/builtin-types/set/">set</a>. Texto adaptado para nível A1.</p></main>
+<footer>Feito para estudar Inglês 1 (UFJ). Treine em voz alta: ouça, repita, grave.</footer>
+<script src="app.js"></script></body></html>

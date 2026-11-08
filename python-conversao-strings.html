@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Type casting, strings e list comprehensions · English com o Ronan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body><header class="top"><a class="brand" href="index.html">English <span>A1→C2</span></a><nav><a href="index.html">Início</a><a href="guia-ingles-1.html">Guia Inglês 1</a><a href="conversacao.html">Treinar a fala</a><a href="prompt-chatgpt.html">Prompt ChatGPT</a><a href="python-intro.html" aria-current="page">Python</a></nav></header>
+<main><h1>Type casting, strings e list comprehensions</h1><p class="lead">Trocar de tipo, mexer em texto e criar listas de forma curta.</p><section><h2>Type casting</h2><p><b>Type casting</b> means to change one type to another type.</p><pre><code>int(&quot;42&quot;)
+int(3.9)
+float(&quot;3.14&quot;)
+str(42)
+list(&quot;abc&quot;)
+tuple([1, 2, 3])
+set([1, 1, 2])
+bool(0)</code></pre><pre class="out" aria-label="Output"><code>42
+3
+3.14
+&#x27;42&#x27;
+[&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;]
+(1, 2, 3)
+{1, 2}
+False</code></pre><ul><li><code>int(3.9)</code> gives <code>3</code>. Python cuts the decimals. It doesn’t round.</li><li><code>int("abc")</code> gives an error (<code>ValueError</code>), because "abc" isn’t a number.</li><li><code>int("101010", 2)</code> reads the text as base 2 and gives 42.</li></ul>
+<h3>Why is this useful?</h3><p><code>input()</code> always gives a string. Change it to a number if you want to do math:</p><pre><code>age = int(input(&quot;Your age: &quot;))
+print(age + 1)</code></pre></section><section><h2>Working with strings</h2><pre><code>text = &quot;Python&quot;
+text[0]
+text[-1]
+text[0:2]
+len(text)
+&quot;Hello, &quot; + &quot;Ana&quot;
+&quot;ha&quot; * 3</code></pre><pre class="out" aria-label="Output"><code>&#x27;P&#x27;
+&#x27;n&#x27;
+&#x27;Py&#x27;
+6
+&#x27;Hello, Ana&#x27;
+&#x27;hahaha&#x27;</code></pre><ul><li>Index <code>0</code> is the first letter. Index <code>-1</code> is the last letter.</li><li><code>text[0:2]</code> is a <b>slice</b>. It starts at 0 and stops <i>before</i> 2.</li><li><code>+</code> joins two strings (<b>concatenation</b>).</li></ul><div class="scroll"><table><thead><tr><th>Method</th><th>Example</th><th>Result</th></tr></thead><tbody><tr><td><code>.upper()</code></td><td><code>"hello".upper()</code></td><td>'HELLO'</td></tr><tr><td><code>.lower()</code></td><td><code>"HELLO".lower()</code></td><td>'hello'</td></tr><tr><td><code>.capitalize()</code></td><td><code>"python".capitalize()</code></td><td>'Python'</td></tr><tr><td><code>.strip()</code></td><td><code>"  hi  ".strip()</code></td><td>'hi'</td></tr><tr><td><code>.replace()</code></td><td><code>"cat".replace("c", "b")</code></td><td>'bat'</td></tr><tr><td><code>.split()</code></td><td><code>"a b c".split()</code></td><td>['a', 'b', 'c']</td></tr><tr><td><code>.join()</code></td><td><code>"-".join(["a", "b"])</code></td><td>'a-b'</td></tr><tr><td><code>.zfill()</code></td><td><code>"7".zfill(3)</code></td><td>'007'</td></tr></tbody></table></div><h3>f-strings</h3><pre><code>name = &quot;Ana&quot;
+age = 20
+f&quot;{name} is {age} years old.&quot;</code></pre><pre class="out" aria-label="Output"><code>&#x27;Ana is 20 years old.&#x27;</code></pre><p>Strings are immutable: a method like <code>.upper()</code> gives a <b>new</b> string. The old string stays the same.</p></section><section><h2>List comprehensions</h2><p>A <b>list comprehension</b> is a short way to make a list from another list.</p><h3>With a for loop</h3><pre><code>squares = []
+for x in range(5):
+    squares.append(x ** 2)
+squares</code></pre><pre class="out" aria-label="Output"><code>[0, 1, 4, 9, 16]</code></pre><h3>With a comprehension (same result)</h3><pre><code>squares = [x ** 2 for x in range(5)]
+squares</code></pre><pre class="out" aria-label="Output"><code>[0, 1, 4, 9, 16]</code></pre><p>Pattern: <code>[what_to_do for item in collection]</code></p><h3>With a condition</h3><pre><code>even = [x for x in range(10) if x % 2 == 0]
+even</code></pre><pre class="out" aria-label="Output"><code>[0, 2, 4, 6, 8]</code></pre><h3>Real example: binary to decimal</h3><pre><code>binary_strings = [&quot;1101&quot;, &quot;1010&quot;, &quot;1111&quot;]
+decimal_numbers = [int(b, 2) for b in binary_strings]
+decimal_numbers</code></pre><pre class="out" aria-label="Output"><code>[13, 10, 15]</code></pre></section><section><h2>Mini glossário</h2><div class="scroll"><table><thead><tr><th>Inglês</th><th>Português</th></tr></thead><tbody><tr><td>type casting</td><td>conversão de tipo</td></tr><tr><td>change … to …</td><td>transformar … em …</td></tr><tr><td>round</td><td>arredondar</td></tr><tr><td>cut</td><td>cortar</td></tr><tr><td>error</td><td>erro</td></tr><tr><td>slice</td><td>fatia (pedaço) do texto</td></tr><tr><td>concatenation</td><td>juntar textos</td></tr><tr><td>method</td><td>método (função de um objeto)</td></tr><tr><td>new</td><td>novo</td></tr><tr><td>comprehension</td><td>compreensão (jeito curto de criar lista)</td></tr><tr><td>condition</td><td>condição</td></tr><tr><td>result</td><td>resultado</td></tr></tbody></table></div></section><p class="src">Fontes (Real Python): <a href="https://realpython.com/ref/builtin-types/int/">int</a> · <a href="https://realpython.com/ref/builtin-types/str/">str</a> · <a href="https://realpython.com/ref/builtin-types/list/">list</a> · <a href="https://realpython.com/ref/glossary/comprehension/">comprehension</a>. Texto adaptado para nível A1.</p></main>
+<footer>Feito para estudar Inglês 1 (UFJ). Treine em voz alta: ouça, repita, grave.</footer>
+<script src="app.js"></script></body></html>

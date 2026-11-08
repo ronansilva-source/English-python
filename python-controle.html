@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Printing, conditionals e loops · English com o Ronan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body><header class="top"><a class="brand" href="index.html">English <span>A1→C2</span></a><nav><a href="index.html">Início</a><a href="guia-ingles-1.html">Guia Inglês 1</a><a href="conversacao.html">Treinar a fala</a><a href="prompt-chatgpt.html">Prompt ChatGPT</a><a href="python-intro.html" aria-current="page">Python</a></nav></header>
+<main><h1>Printing, conditionals e loops</h1><p class="lead">Mostrar resultados, tomar decisões e repetir tarefas.</p><section><h2>Printing variables</h2><p>Use <code>print()</code> to show something on the screen.</p><pre><code>name = &quot;Ana&quot;
+age = 20
+print(&quot;Hello&quot;)
+print(name)
+print(&quot;My name is&quot;, name)
+print(f&quot;{name} is {age} years old.&quot;)</code></pre><pre class="out" aria-label="Output"><code>Hello
+Ana
+My name is Ana
+Ana is 20 years old.</code></pre><ul><li>With a comma, <code>print()</code> puts a space between the items.</li><li>An f-string is the easiest way to put variables inside text.</li></ul><pre><code>print(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, sep=&quot;-&quot;)
+print(&quot;Hi&quot;, end=&quot;!&quot;)
+print(&quot; Bye&quot;)</code></pre><pre class="out" aria-label="Output"><code>a-b-c
+Hi! Bye</code></pre><p><code>sep</code> changes what goes <i>between</i> the items. <code>end</code> changes what goes at the end (the normal end is a new line).</p></section><section><h2>Conditionals</h2><p>A <b>conditional</b> runs code only if a condition is true. We use <code>if</code>, <code>elif</code> and <code>else</code>.</p><pre><code>x = 7
+if x &gt; 5:
+    print(&quot;x is greater than 5&quot;)</code></pre><pre class="out" aria-label="Output"><code>x is greater than 5</code></pre><pre><code>grade = 60
+if grade &gt;= 70:
+    print(&quot;Pass&quot;)
+elif grade &gt;= 50:
+    print(&quot;Recovery&quot;)
+else:
+    print(&quot;Fail&quot;)</code></pre><pre class="out" aria-label="Output"><code>Recovery</code></pre><ul><li>The line with <code>if</code> ends with a colon <code>:</code>.</li><li>The code inside is <b>indented</b> (4 spaces). Indentation is part of Python’s syntax.</li><li>Python checks from top to bottom. It runs the first block that is true.</li><li><code>else</code> has no condition. It runs when nothing above was true.</li></ul></section>
+<section><h2>Loops</h2><p>A <b>loop</b> repeats code.</p><h3>for loop</h3><p>A <code>for</code> loop goes through each item of a collection.</p><pre><code>fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+for fruit in fruits:
+    print(fruit)</code></pre><pre class="out" aria-label="Output"><code>apple
+banana
+cherry</code></pre><p>In each round, the variable <code>fruit</code> gets the next item.</p><pre><code>for i in range(3):
+    print(i)</code></pre><pre class="out" aria-label="Output"><code>0
+1
+2</code></pre><p><code>range(3)</code> gives 0, 1 and 2. It stops <i>before</i> 3.</p><h3>while loop</h3><p>A <code>while</code> loop repeats while the condition is true.</p><pre><code>count = 0
+while count &lt; 3:
+    print(count)
+    count += 1</code></pre><pre class="out" aria-label="Output"><code>0
+1
+2</code></pre><p><code>count += 1</code> means <code>count = count + 1</code>. If the condition never becomes false, the loop never stops!</p><h3>break and continue</h3><pre><code>for n in range(5):
+    if n == 1:
+        continue
+    if n == 3:
+        break
+    print(n)</code></pre><pre class="out" aria-label="Output"><code>0
+2</code></pre><ul><li><code>continue</code> skips this round and goes to the next.</li><li><code>break</code> stops the whole loop.</li></ul></section><section><h2>Mini glossário</h2><div class="scroll"><table><thead><tr><th>Inglês</th><th>Português</th></tr></thead><tbody><tr><td>print</td><td>imprimir, mostrar na tela</td></tr><tr><td>variable</td><td>variável</td></tr><tr><td>condition</td><td>condição</td></tr><tr><td>conditional</td><td>condicional</td></tr><tr><td>if / else</td><td>se / senão</td></tr><tr><td>indented</td><td>com recuo (identado)</td></tr><tr><td>loop</td><td>laço, repetição</td></tr><tr><td>for loop</td><td>laço for (para cada item)</td></tr><tr><td>while loop</td><td>laço while (enquanto)</td></tr><tr><td>collection</td><td>coleção</td></tr><tr><td>round</td><td>rodada, volta</td></tr><tr><td>skip</td><td>pular</td></tr><tr><td>stop</td><td>parar</td></tr><tr><td>repeat</td><td>repetir</td></tr><tr><td>colon</td><td>dois-pontos</td></tr></tbody></table></div></section><p class="src">Fontes (Real Python): <a href="https://realpython.com/ref/builtin-functions/print/">print()</a> · <a href="https://realpython.com/ref/keywords/if/">if</a> · <a href="https://realpython.com/ref/keywords/for/">for</a> · <a href="https://realpython.com/ref/keywords/while/">while</a> · <a href="https://realpython.com/ref/best-practices/loops/">loops</a>. Texto adaptado para nível A1.</p></main>
+<footer>Feito para estudar Inglês 1 (UFJ). Treine em voz alta: ouça, repita, grave.</footer>
+<script src="app.js"></script></body></html>
